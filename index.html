@@ -361,11 +361,21 @@
       margin-bottom: 16px;
       display: flex; align-items: center; gap: 12px;
     }
-    .section-label::after {
-      content: '';
-      flex: 1; max-width: 60px; height: 1px;
-      background: var(--gold-dim);
-    }
+  .section-label::before,
+.section-label::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--gold-dim);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
     .section-title {
       font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 3.2rem);
@@ -561,18 +571,15 @@
       transition: border-color .25s;
     }
     .person-card:hover { border-color: var(--gold); }
-    .person-avatar {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: var(--bg3);
-      border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
+.person-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+
+  margin: 0 auto 16px;   /* ← THIS centers it */
+}
     .person-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
     .person-role {
       font-family: var(--mono);
@@ -599,7 +606,7 @@
       color: var(--gold);
       margin-bottom: 12px;
     }
-    .advisory-names { font-size: .95rem; color: #aab0c4; line-height: 1.8; }
+    .advisory-names { font-size: .95rem; color: var(--text);; line-height: 1.8; }
 
     /* ── Roadmap ────────────────────────────────────────────── */
     #roadmap { background: var(--bg); }
@@ -1018,7 +1025,7 @@
   <!-- ── Navbar ─────────────────────────────────────────────── -->
   <nav>
     <a class="nav-logo" href="#hero">
-  <img src="AIFES_logo.png" alt="AIFES Lab Logo" style="height: 110px;">
+  <img src="AIFES-removebg-preview.png" alt="AIFES Lab Logo" style="height: 85px;">
 </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
@@ -1301,62 +1308,139 @@
   </section>
 
   <!-- ── People ─────────────────────────────────────────────────── -->
-  <section id="people">
-    <div class="section-inner">
-      <p class="section-label fade-in">People &amp; Governance</p>
-      <h2 class="section-title fade-in">Leadership &amp;<br>Advisory Panel</h2>
-      <p class="section-sub fade-in">Balanced representation from academia, industry, and regulators — with clear terms and engagement cadence.</p>
+<section id="people">
+  <div class="section-inner">
 
-      <div class="people-grid fade-in">
-        <div class="person-card">
-          <div class="person-avatar">G</div>
-          <div class="person-name">Prof Ganesh Ghalme</div>
-          <div class="person-role">Co-Director</div>
-          <div class="person-desc">Joint academic lead. Responsible for lab strategy, research direction, and external partnerships.</div>
+    <p class="section-label fade-in">People &amp; Governance</p>
+    <h2 class="section-title fade-in">Leadership &amp;<br>Advisory Panel</h2>
+    <p class="section-sub fade-in">
+      Balanced representation from academia, industry, and regulators — with clear terms and engagement cadence.
+    </p>
+
+    <div class="people-grid fade-in">
+
+      <!-- Prof Ganesh -->
+      <div class="person-card">
+        <div class="person-avatar">
+          <img src="profganesh.jpg" alt="Prof Ganesh Ghalme" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <div class="person-card">
-          <div class="person-avatar">R</div>
-          <div class="person-name">Prof V L Raju Chinthalapati</div>
-          <div class="person-role">Co-Director</div>
-          <div class="person-desc">Joint academic lead. Responsible for curriculum, faculty development, and institutional governance.</div>
+        <div class="person-name">
+          <a href="https://sites.google.com/view/ganeshghalme/home?authuser=" target="_blank" style="text-decoration:none; color:inherit;">
+            Prof Ganesh Ghalme
+          </a>
         </div>
-        <div class="person-card">
-          <div class="person-avatar">TL</div>
-          <div class="person-name">Technical Lead</div>
-          <div class="person-role">AI/ML Platforms</div>
-          <div class="person-desc">Oversees GPU/CPU clusters, data lake, model registry, and market data infrastructure.</div>
-        </div>
-        <div class="person-card">
-          <div class="person-avatar">FT</div>
-          <div class="person-name">Finance Lead</div>
-          <div class="person-role">Theme Lead — Finance</div>
-          <div class="person-desc">Leads the trading, analytics, and risk research stream.</div>
-        </div>
-        <div class="person-card">
-          <div class="person-avatar">ET</div>
-          <div class="person-name">Economies Lead</div>
-          <div class="person-role">Theme Lead — Economies</div>
-          <div class="person-desc">Leads FinTech/DeFi, climate finance, and market design research.</div>
-        </div>
-        <div class="person-card">
-          <div class="person-avatar">OP</div>
-          <div class="person-name">Operations Lead</div>
-          <div class="person-role">Partnerships &amp; Grants</div>
-          <div class="person-desc">Industry liaison, MOU management, grant applications, and executive programme delivery.</div>
+        <div class="person-role">Co-Director</div>
+        <div class="person-desc">
+          Joint academic lead. Responsible for lab strategy, research direction, and external partnerships.
         </div>
       </div>
 
-      <div class="advisory-note fade-in">
-        <div class="advisory-title">Advisory Panel — International &amp; Industry Experts</div>
-        <div class="advisory-names">
-          <strong>Academia:</strong> Visiting fellows from leading universities in the UK and USA.<br>
-          <strong>Industry:</strong> Representatives from exchanges, banks/NBFCs, fintechs, regulators, and standards bodies.<br>
+      <!-- Prof Raju -->
+      <div class="person-card">
+        <div class="person-avatar">
+          <img src="V-L-Raju.png" alt="Prof V L Raju Chinthalapati" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="person-name">
+          <a href="https://www.gold.ac.uk/computing/people/chinthalapati-raju/" target="_blank" style="text-decoration:none; color:inherit;">
+            Prof V L Raju Chinthalapati
+          </a>
+        </div>
+        <div class="person-role">Co-Director</div>
+        <div class="person-desc">
+          Joint academic lead. Responsible for curriculum, faculty development, and institutional governance.
+        </div>
+      </div>
+
+      <!-- Technical Lead -->
+      <div class="person-card">
+        <div class="person-avatar" style="display:flex; align-items:center; justify-content:center; font-size:1.8rem;">
+  👤
+</div>
+        <div class="person-name">Technical Lead</div>
+        <div class="person-role">AI/ML Platforms</div>
+        <div class="person-desc">
+          Oversees GPU/CPU clusters, data lake, model registry, and market data infrastructure.
+        </div>
+      </div>
+
+      <!-- Finance Lead -->
+      <div class="person-card">
+        <div class="person-avatar" style="display:flex; align-items:center; justify-content:center; font-size:1.8rem;">
+  👤
+</div>
+        <div class="person-name">Finance Lead</div>
+        <div class="person-role">Theme Lead — Finance</div>
+        <div class="person-desc">
+          Leads the trading, analytics, and risk research stream.
+        </div>
+      </div>
+
+      <!-- Economies Lead -->
+      <div class="person-card">
+        <div class="person-avatar" style="display:flex; align-items:center; justify-content:center; font-size:1.8rem;">
+  👤
+</div>
+        <div class="person-name">Economies Lead</div>
+        <div class="person-role">Theme Lead — Economies</div>
+        <div class="person-desc">
+          Leads FinTech/DeFi, climate finance, and market design research.
+        </div>
+      </div>
+
+      <!-- Operations Lead -->
+      <div class="person-card">
+        <div class="person-avatar" style="display:flex; align-items:center; justify-content:center; font-size:1.8rem;">
+  👤
+</div>
+        <div class="person-name">Operations Lead</div>
+        <div class="person-role">Partnerships &amp; Grants</div>
+        <div class="person-desc">
+          Industry liaison, MOU management, grant applications, and executive programme delivery.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<div style="text-align:center; font-weight:600; margin-top:20px;">
+  Industry Experts
+</div>
+
+<div style="display:grid; grid-template-columns: repeat(2, 300px); justify-content:center; gap:32px; margin-top:10px;">
+
+  <div class="person-card">
+    <div class="person-avatar" style="display:flex; align-items:center; justify-content:center; font-size:1.8rem;">
+  👤
+</div>
+    <div class="person-name">Dr Pururav (Puru) Thoutireddy</div>
+    <div class="person-role">Vice President & Portfolio Manager</div>
+    <div class="person-desc">
+      Systemic Fixed Income<br>
+      Franklin Templeton Investments, San Francisco
+    </div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-avatar" style="display:flex; align-items:center; justify-content:center; font-size:1.8rem;">
+  👤
+</div>
+    <div class="person-name">Naimish Shah</div>
+    <div class="person-role">Global Head of Risk Modelling</div>
+    <div class="person-desc">
+      HSBC, London
+    </div>
+  </div>
+
+</div>
+<!--
+</div>
           <strong>Affiliates:</strong> IITH faculty across AI / CSE / Mathematics and cognate departments.
         </div>
       </div>
     </div>
   </section>
-
+-->
   <!-- ── Community ─────────────────────────────────────────────── -->
   <section id="community">
     <div class="section-inner">
@@ -1419,17 +1503,103 @@
         financial markets, economic systems, and societal impact.
       </p>
 
-      <div class="reading-group-faculty">
-        <div class="rg-faculty-item">
-          <div class="rg-faculty-label">Faculty — IIT Hyderabad</div>
-          Prof. Ganesh Ghalme
-        </div>
-        <div class="rg-faculty-item">
-          <div class="rg-faculty-label">Faculty — IIT Hyderabad</div>
-          Prof. V L Raju Chinthalapati
-        </div>
-      </div>
+<!-- Faculty -->
+<div style="margin-top:40px;">
 
+
+
+<div class="section-label" style="justify-content:center;">
+  Faculty
+</div>
+
+<div class="people-grid" style="margin-top:20px; grid-template-columns: repeat(4, 1fr);">
+
+  <!-- Prof Ganesh -->
+  <div class="person-card">
+    <div class="person-avatar">
+      <img src="profganesh.jpg" alt="Prof Ganesh Ghalme" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="person-name">
+      <a href="https://sites.google.com/view/ganeshghalme/home?authuser=" target="_blank" style="text-decoration:none; color:inherit;">
+        Prof. Ganesh Ghalme
+      </a>
+    </div>
+    <div class="person-role">Faculty — IIT Hyderabad</div>
+  </div>
+
+  <!-- Prof Raju -->
+  <div class="person-card">
+    <div class="person-avatar">
+      <img src="V-L-Raju.png" alt="Prof V L Raju Chinthalapati" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="person-name">
+      <a href="https://www.gold.ac.uk/computing/people/chinthalapati-raju/" target="_blank" style="text-decoration:none; color:inherit;">
+        Prof. V L Raju Chinthalapati
+      </a>
+    </div>
+    <div class="person-role">Faculty — IIT Hyderabad</div>
+  </div>
+
+  <!-- Prof Phanindra -->
+  <div class="person-card">
+    <div class="person-avatar">
+      <img src="phanindra.jpg" alt="Prof Phanindra Jampana" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="person-name">
+      <a href="https://people.iith.ac.in/pjampana/" target="_blank" style="text-decoration:none; color:inherit;">
+        Prof. Phanindra Jampana
+      </a>
+    </div>
+    <div class="person-role">Faculty — IIT Hyderabad</div>
+  </div>
+
+  <!-- Prof Karthik -->
+  <div class="person-card">
+    <div class="person-avatar">
+      <img src="karthikpn.jpg" alt="Prof Karthik PN" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="person-name">
+      <a href="https://karthikpn.com/" target="_blank" style="text-decoration:none; color:inherit;">
+        Prof. Karthik PN
+      </a>
+    </div>
+    <div class="person-role">Faculty — IIT Hyderabad</div>
+  </div>
+
+</div>
+<!-- Students -->
+<div style="margin-top:60px;">
+
+  <div class="section-label" style="justify-content:center;">
+    Students
+  </div>
+
+  <div class="reading-group-faculty" style="margin-top:20px;">
+
+    <div class="rg-faculty-item">
+      <div class="rg-faculty-label">Student</div>
+      Vishnuhemanth Tiruvalluru — M. Tech (RA), 2nd Year
+    </div>
+
+    <div class="rg-faculty-item">
+      <div class="rg-faculty-label">Student</div>
+      Aditya Varun - B. Tech Final Year
+    </div>
+
+    <div class="rg-faculty-item">
+      <div class="rg-faculty-label">Student</div>
+      Viswa Kiran VVS - M. Tech 2nd Year
+    </div>
+
+    <div class="rg-faculty-item">
+      <div class="rg-faculty-label">Student</div>
+      Akshintala Venkata Mahvith Kusumakar — M. Tech (RA), 3rd year
+    </div>
+
+  </div>
+
+</div>
+</div>
       <p>
         The group meets regularly and is structured around presentations
         delivered by a designated presenter for each session. These sessions
@@ -1494,7 +1664,7 @@
   </section>
 
   <!-- ── Roadmap ─────────────────────────────────────────────── -->
-  <section id="roadmap">
+  <section id="roadmap" style="display: none;">
     <div class="section-inner">
       <p class="section-label fade-in">Launch Plan</p>
       <h2 class="section-title fade-in">First 12 Months<br>Roadmap</h2>
