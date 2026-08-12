@@ -13,7 +13,16 @@ nav: people
         Balanced representation from academia, industry, and regulators — with clear terms and engagement cadence.
       </p>
 
-      <div class="people-grid">
+      <!--
+        Fixed-width + centered grid: with fewer than 3 members, the default
+        3-column grid leaves them stuck to the left. Set grid-template-columns
+        to match the current headcount so the row(s) stay centered:
+          2 members -> repeat(2, 300px)
+          3 members -> repeat(3, 300px)   (fills the row, centering is moot)
+          4 members -> repeat(2, 300px)   (wraps to 2 centered rows of 2, not 3+1)
+          5+ members -> revisit; grid-auto-flow won't balance rows on its own
+      -->
+      <div class="people-grid" style="grid-template-columns: repeat(2, 300px); justify-content: center;">
 
         <!-- Prof Ganesh -->
         <div class="person-card">

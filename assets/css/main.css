@@ -86,6 +86,9 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Navbar ─────────────────────────────────────────────── */
@@ -727,6 +730,7 @@ a.course-instructor:hover .ci-name { color: var(--primary); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
+  justify-content: center;
 }
 .person-card {
   background: var(--card-bg);
@@ -1007,6 +1011,7 @@ footer {
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: auto;
 }
 footer::before {
   content: '';
@@ -1042,6 +1047,13 @@ footer > * { position: relative; z-index: 2; }
 .footer-links a:hover { color: var(--text-light); }
 .footer-links a:hover::after { width: 100%; }
 .footer-iith { font-size: .88rem; color: rgba(255,255,255,.65); }
+.footer-social { display: flex; gap: 14px; }
+.footer-social a {
+  display: inline-flex;
+  color: rgba(255,255,255,.75);
+  transition: color .3s ease, transform .3s ease;
+}
+.footer-social a:hover { color: var(--text-light); transform: translateY(-2px); }
 
 /* ── Scroll-reveal (JS toggles .in-view via IntersectionObserver) ── */
 .theme-card, .output-card, .person-card, .comm-card, .partner-cat,
@@ -1061,7 +1073,7 @@ footer > * { position: relative; z-index: 2; }
 @media (max-width: 1080px) {
   .themes-grid { grid-template-columns: repeat(2, 1fr); }
   .people-grid, .community-grid { grid-template-columns: repeat(2, 1fr); }
-  #reading-group .people-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  #reading-group .people-grid, #people .people-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .infra-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 900px) {
@@ -1125,7 +1137,7 @@ footer > * { position: relative; z-index: 2; }
   .people-grid, .community-grid, .partner-categories { grid-template-columns: 1fr; }
   .output-card { grid-template-columns: 48px 1fr; gap: 16px; padding: 1.75rem; }
   .output-num { font-size: 1.6rem; }
-  #reading-group .people-grid { grid-template-columns: 1fr !important; }
+  #reading-group .people-grid, #people .people-grid { grid-template-columns: 1fr !important; }
   .themes-grid { grid-template-columns: 1fr; }
   .infra-grid { grid-template-columns: repeat(2, 1fr); }
   footer { padding: 2rem 20px; flex-direction: column; align-items: flex-start; }
