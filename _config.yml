@@ -1,0 +1,9 @@
+title: AIFES Lab
+description: >-
+  AIFES is a research laboratory at IIT Hyderabad advancing trustworthy AI across
+  algorithmic trading, market microstructure, risk management, FinTech/DeFi,
+  climate finance, RegTech, and computational game theory.
+
+# GitHub Pages builds this with Jekyll automatically (no _config.yml plugins
+# needed beyond the defaults it already whitelists).
+markdown: kramdown

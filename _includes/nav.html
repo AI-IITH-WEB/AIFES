@@ -1,0 +1,28 @@
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="assets/img/AIFES_logo.png" alt="AIFES Lab Logo">
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html"{% if page.nav == 'about' %} class="active"{% endif %}>Home</a></li>
+    <li><a href="research.html"{% if page.nav == 'research' %} class="active"{% endif %}>Research</a></li>
+    <li><a href="outputs.html"{% if page.nav == 'outputs' %} class="active"{% endif %}>Outputs</a></li>
+    <li><a href="education.html"{% if page.nav == 'education' %} class="active"{% endif %}>Education</a></li>
+    <li><a href="reading-group.html"{% if page.nav == 'reading-group' %} class="active"{% endif %}>Reading Group</a></li>
+    <li><a href="people.html"{% if page.nav == 'people' %} class="active"{% endif %}>People</a></li>
+    <li><a href="contact.html"{% if page.nav == 'contact' %} class="active"{% endif %}>Connect</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <span class="nav-badge">
+    <a href="https://www.iith.ac.in/" target="_blank" rel="noopener noreferrer">
+      <img src="assets/img/iith-logo.png" alt="IIT Hyderabad" style="height: 45px;">
+    </a>
+  </span>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+    <span class="icon-moon">🌙</span>
+    <span class="icon-sun">☀️</span>
+  </button>
+</nav>
