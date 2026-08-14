@@ -639,6 +639,31 @@ section { position: relative; z-index: 1; }
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(10px);
 }
+.advisory-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  list-style: none;
+}
+.advisory-summary::-webkit-details-marker { display: none; }
+.advisory-summary::marker { content: ''; }
+.advisory-chevron {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: transform .3s ease, background-color .3s ease;
+}
+.advisory-summary:hover .advisory-chevron { background: var(--bg2); }
+details.advisory-note[open] .advisory-chevron { transform: rotate(180deg); }
 .advisory-title {
   font-size: .85rem;
   font-weight: 700;
