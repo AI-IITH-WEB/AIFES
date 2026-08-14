@@ -124,7 +124,7 @@ nav.scrolled { box-shadow: var(--shadow-lg); height: 84px; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 74px; width: auto; transition: transform .3s ease; }
+.nav-logo img { height: 92px; width: auto; transition: transform .3s ease; }
 .nav-logo:hover img { transform: scale(1.04); }
 
 .nav-links { display: flex; gap: 2.25rem; list-style: none; align-items: center; }
@@ -190,7 +190,7 @@ section { position: relative; z-index: 1; }
   max-width: 1300px;
   transform: translate(-50%, -50%);
   z-index: -3;
-  opacity: .55;
+  opacity: .12;
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -219,7 +219,10 @@ section { position: relative; z-index: 1; }
   z-index: -1;
   width: 100%;
   height: 100%;
-  opacity: .7;
+  transition: transform .1s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-chart { display: none; }
 }
 
 .hero-tag {
@@ -227,7 +230,7 @@ section { position: relative; z-index: 1; }
   font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.85);
+  color: #fff;
   margin: 0 auto 22px;
   opacity: 0;
   transform: translateY(24px);
@@ -241,19 +244,21 @@ section { position: relative; z-index: 1; }
   letter-spacing: -.02em;
   max-width: 44ch;
   margin: 0 auto;
+  text-shadow: 0 2px 24px rgba(6, 13, 24, .55);
   opacity: 0;
   transform: translateY(28px);
   animation: fadeInUp .9s ease .25s forwards;
 }
-.hero-title .line-gold { color: #ffe9a8; }
-.hero-title .line-dim  { color: rgba(255,255,255,.78); }
+.hero-title .line-gold { color: #fff3cc; }
+.hero-title .line-dim  { color: rgba(255,255,255,.94); }
 
 .hero-desc {
   max-width: 70ch;
   margin: 26px auto 0;
   font-size: 1.12rem;
-  color: rgba(255,255,255,.92);
+  color: #fff;
   line-height: 1.75;
+  text-shadow: 0 2px 16px rgba(6, 13, 24, .5);
   opacity: 0;
   transform: translateY(28px);
   animation: fadeInUp .9s ease .4s forwards;
@@ -1078,8 +1083,8 @@ footer > * { position: relative; z-index: 2; }
 }
 @media (max-width: 900px) {
   nav { padding: 0 16px; height: 76px; gap: 10px; }
-  .nav-logo img { height: 40px; }
-  .nav-badge img { height: 30px; }
+  .nav-logo img { height: 50px; }
+  .nav-badge img { height: 38px; }
   .theme-toggle { margin-left: 10px; }
   .nav-links { display: none; }
   .nav-links.open {
