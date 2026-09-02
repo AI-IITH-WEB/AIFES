@@ -4,6 +4,14 @@ description: >-
   algorithmic trading, market microstructure, risk management, FinTech/DeFi,
   climate finance, RegTech, and computational game theory.
 
-# GitHub Pages builds this with Jekyll automatically (no _config.yml plugins
-# needed beyond the defaults it already whitelists).
+# Needed so jekyll-sitemap emits absolute URLs under the /AIFES project-page
+# subpath, not just bare filenames.
+url: "https://ai-iith-web.github.io"
+baseurl: "/AIFES"
+
+# jekyll-sitemap is in GitHub Pages' whitelisted plugin set, so this builds
+# automatically — no Gemfile needed. Generates /sitemap.xml at build time.
+plugins:
+  - jekyll-sitemap
+
 markdown: kramdown

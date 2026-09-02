@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-iith-web.github.io/AIFES/sitemap.xml
